@@ -11,7 +11,6 @@ void InsertionSort(int a[],int n)
             swap(a[j-1],a[j]);
             j--;
         }
-
     }
 }
 
