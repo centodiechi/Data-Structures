@@ -1,5 +1,5 @@
-#ifndef BUBBLE_SORT_H
-#define BUBBLE_SORT_H
+#ifndef SORT_H
+#define SORT_H
 
 namespace sorting
 {

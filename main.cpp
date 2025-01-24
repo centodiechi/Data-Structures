@@ -1,11 +1,6 @@
 #include <iostream>
-#include "sorting/bubble_sort.h"
-#include "sorting/insertion_sort.h"
-#include "sorting/selection_sort.h"
-#include "sorting/merge_sort.h"
-#include "sorting/quick_sort.h"
-#include "searching/linear_search.h"
-#include "searching/binary_search.h"
+#include<algorithm>
+#include "searching/search.h"
 using namespace std;
 
 template <typename T>
@@ -32,39 +27,15 @@ int main()
 
     cout << "Original Array" << endl;
     Print(Tarr, n);
-
-    Reset<int>(arr, Tarr, n);
-    sorting::bubbleSort<int>(arr, n);
-    cout << "Bubble Sort" << endl;
-    Print(arr, n);
-
-    Reset<int>(arr, Tarr, n);
-    sorting::insertionSort<int>(arr, n);
-    cout << "Insertion Sort" << endl;
-    Print(arr, n);
-
-    Reset<int>(arr, Tarr, n);
-    sorting::selectionSort<int>(arr, n);
-    cout << "Selection Sort" << endl;
-    Print(arr, n);
-
-    Reset<int>(arr, Tarr, n);
-    sorting::mergeSort<int>(arr, 0, n - 1);
-    cout << "Merge Sort" << endl;
-    Print(arr, n);
-
-    Reset<int>(arr, Tarr, n);
-    sorting::quickSort<int>(arr, 0, n - 1);
-    cout << "Quick Sort" << endl;
-    Print(arr, n);
-
-    int key = -2;
-    int bfound = searching::binarySearch<int>(arr, n, key);
-    cout << "Binary Search " << key << " : " << bfound << endl;
-
-    Reset<int>(arr, Tarr, n);
-    int lfound = searching::linearSearch<int>(arr, n, key);
+    Reset(arr,Tarr,n);
+    int key = 23;
+    int lfound = searching::linear_search<int>(arr, arr+n, key);
     cout << "Linear Search " << key << " : " << lfound << endl;
+    
+    sort(arr,arr+n);
+    Print(arr,n);
+    int bfound = searching::binary_search<int>(arr, arr+n, key);
+    cout << "Binary Search " << key << " : " << bfound << endl;
 
     return 0;
 }
