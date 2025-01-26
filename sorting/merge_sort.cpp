@@ -34,11 +34,8 @@ void merge_sort(T *s,T *e,Comparator comp = Comparator()) {
         return;
     }
     T* m = s+(e-s)/2;
-    cout<<"left"<<*m<<endl;
     merge_sort(s,m,comp);
-    cout<<"right"<<*m<<endl;
     merge_sort(m,e,comp);
-    cout<<"merge"<<*m<<endl;
     merge(s,m,e);
 }
 
